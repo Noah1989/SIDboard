@@ -1,0 +1,439 @@
+# EESchema Netlist Version 1.1 created  Mon 13 Feb 2012 05:44:13 PM CET
+(
+ ( /4F393A9F $noname  C12 CP1 {Lib=CP1}
+  (    1 N-000010 )
+  (    2 N-000060 )
+ )
+ ( /4F393A9A $noname  C11 CP1 {Lib=CP1}
+  (    1 N-000006 )
+  (    2 N-000005 )
+ )
+ ( /4F3937D6 $noname  RV1 POT {Lib=POT}
+  (    1 N-000013 )
+  (    2 VCC )
+  (    3 ? )
+ )
+ ( /4F3937D1 $noname  RV2 POT {Lib=POT}
+  (    1 N-000009 )
+  (    2 VCC )
+  (    3 ? )
+ )
+ ( /4F393745 $noname  C8 C {Lib=C}
+  (    1 N-000009 )
+  (    2 GND )
+ )
+ ( /4F393732 $noname  C7 C {Lib=C}
+  (    1 N-000013 )
+  (    2 GND )
+ )
+ ( /4F3936AE $noname  C5 C {Lib=C}
+  (    1 N-000010 )
+  (    2 GND )
+ )
+ ( /4F39366F $noname  P6 AUDIO_IN {Lib=BNC}
+  (    1 N-000060 )
+  (    2 GND )
+ )
+ ( /4F39366D $noname  R2 R {Lib=R}
+  (    1 N-000010 )
+  (    2 GND )
+ )
+ ( /4F3935EF $noname  R1 R {Lib=R}
+  (    1 N-000006 )
+  (    2 GND )
+ )
+ ( /4F393597 $noname  P7 AUDIO_OUT {Lib=BNC}
+  (    1 N-000005 )
+  (    2 GND )
+ )
+ ( /4F393515 $noname  C10 CP1 {Lib=CP1}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F393510 $noname  C9 CP1 {Lib=CP1}
+  (    1 N-000056 )
+  (    2 GND )
+ )
+ ( /4F3934D7 $noname  C2 C {Lib=C}
+  (    1 N-000056 )
+  (    2 GND )
+ )
+ ( /4F3934C9 $noname  C3 C {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F3924D7 $noname  C6 C {Lib=C}
+  (    1 N-000055 )
+  (    2 N-000003 )
+ )
+ ( /4F3924D4 $noname  C4 C {Lib=C}
+  (    1 N-000039 )
+  (    2 N-000002 )
+ )
+ ( /4F3921F8 $noname  K1 INV3 {Lib=INV3}
+  (    1 VEE )
+  (    2 N-000056 )
+  (    3 VDD )
+ )
+ ( /4F392007 $noname  C1 100n {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F391F50 $noname  P8 CONN_8X2 {Lib=CONN_8X2}
+  (    1 N-000047 )
+  (    2 N-000061 )
+  (    3 N-000046 )
+  (    4 N-000061 )
+  (    5 N-000045 )
+  (    6 N-000061 )
+  (    7 N-000044 )
+  (    8 N-000061 )
+  (    9 N-000043 )
+  (   10 N-000061 )
+  (   11 N-000042 )
+  (   12 N-000061 )
+  (   13 N-000041 )
+  (   14 N-000061 )
+  (   15 N-000040 )
+  (   16 N-000061 )
+ )
+ ( /4F391E32 $noname  U2 74LS138 {Lib=74LS138}
+  (    1 N-000049 )
+  (    2 N-000030 )
+  (    3 N-000048 )
+  (    4 GND )
+  (    5 GND )
+  (    6 VCC )
+  (    7 N-000047 )
+  (    8 GND )
+  (    9 N-000046 )
+  (   10 N-000045 )
+  (   11 N-000044 )
+  (   12 N-000043 )
+  (   13 N-000042 )
+  (   14 N-000041 )
+  (   15 N-000040 )
+  (   16 VCC )
+ )
+ ( /4F39048E $noname  U1 6581_SID {Lib=6581_SID}
+  (    1 N-000002 )
+  (    2 N-000039 )
+  (    3 N-000003 )
+  (    4 N-000055 )
+  (    5 N-000054 )
+  (    6 N-000031 )
+  (    7 N-000053 )
+  (    8 N-000061 )
+  (    9 N-000027 )
+  (   10 N-000052 )
+  (   11 N-000028 )
+  (   12 N-000051 )
+  (   13 N-000029 )
+  (   14 GND )
+  (   15 N-000037 )
+  (   16 N-000038 )
+  (   17 N-000014 )
+  (   18 N-000015 )
+  (   19 N-000016 )
+  (   20 N-000017 )
+  (   21 N-000018 )
+  (   22 N-000050 )
+  (   23 N-000013 )
+  (   24 N-000009 )
+  (   25 VCC )
+  (   26 N-000010 )
+  (   27 N-000006 )
+  (   28 N-000056 )
+ )
+ ( /4F385F7E $noname  P5 CONN_8 {Lib=CONN_8}
+  (    1 VCC )
+  (    2 VDD )
+  (    3 VEE )
+  (    4 GND )
+  (    5 GND )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+ )
+ ( /4F385E17 $noname  P4 CONN_8 {Lib=CONN_8}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+ )
+ ( /4F385E0A $noname  P3 CONN_8 {Lib=CONN_8}
+  (    1 N-000050 )
+  (    2 N-000018 )
+  (    3 N-000017 )
+  (    4 N-000016 )
+  (    5 N-000015 )
+  (    6 N-000014 )
+  (    7 N-000038 )
+  (    8 N-000037 )
+ )
+ ( /4F385E03 $noname  P2 CONN_8 {Lib=CONN_8}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 N-000053 )
+  (    5 ? )
+  (    6 ? )
+  (    7 N-000054 )
+  (    8 N-000031 )
+ )
+ ( /4F385DFE $noname  P1 CONN_8 {Lib=CONN_8}
+  (    1 N-000048 )
+  (    2 N-000030 )
+  (    3 N-000049 )
+  (    4 N-000029 )
+  (    5 N-000051 )
+  (    6 N-000028 )
+  (    7 N-000052 )
+  (    8 N-000027 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C12
+ CP*
+ SM*
+$endlist
+$component C11
+ CP*
+ SM*
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C9
+ CP*
+ SM*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "VCC" "VCC"
+ U2 16
+ C1 1
+ U2 6
+ U1 25
+ RV2 2
+ RV1 2
+ C3 1
+ P5 1
+ C10 1
+Net 2 "" ""
+ U1 1
+ C4 2
+Net 3 "" ""
+ U1 3
+ C6 2
+Net 4 "GND" "GND"
+ U2 4
+ U2 5
+ U2 8
+ P5 5
+ P5 4
+ U1 14
+ C5 2
+ P6 2
+ R2 2
+ C1 2
+ R1 2
+ P7 2
+ C10 2
+ C9 2
+ C2 2
+ C3 2
+ C8 2
+ C7 2
+Net 5 "" ""
+ P7 1
+ C11 2
+Net 6 "" ""
+ R1 1
+ U1 27
+ C11 1
+Net 7 "VDD" "VDD"
+ K1 3
+ P5 2
+Net 8 "VEE" "VEE"
+ K1 1
+ P5 3
+Net 9 "" ""
+ U1 24
+ RV2 1
+ C8 1
+Net 10 "" ""
+ U1 26
+ C12 1
+ C5 1
+ R2 1
+Net 13 "" ""
+ C7 1
+ RV1 1
+ U1 23
+Net 14 "" ""
+ U1 17
+ P3 6
+Net 15 "" ""
+ U1 18
+ P3 5
+Net 16 "" ""
+ U1 19
+ P3 4
+Net 17 "" ""
+ U1 20
+ P3 3
+Net 18 "" ""
+ P3 2
+ U1 21
+Net 27 "" ""
+ U1 9
+ P1 8
+Net 28 "" ""
+ P1 6
+ U1 11
+Net 29 "" ""
+ U1 13
+ P1 4
+Net 30 "" ""
+ U2 2
+ P1 2
+Net 31 "" ""
+ U1 6
+ P2 8
+Net 37 "" ""
+ P3 8
+ U1 15
+Net 38 "" ""
+ P3 7
+ U1 16
+Net 39 "" ""
+ C4 1
+ U1 2
+Net 40 "" ""
+ P8 15
+ U2 15
+Net 41 "" ""
+ P8 13
+ U2 14
+Net 42 "" ""
+ P8 11
+ U2 13
+Net 43 "" ""
+ P8 9
+ U2 12
+Net 44 "" ""
+ P8 7
+ U2 11
+Net 45 "" ""
+ U2 10
+ P8 5
+Net 46 "" ""
+ U2 9
+ P8 3
+Net 47 "" ""
+ U2 7
+ P8 1
+Net 48 "" ""
+ P1 1
+ U2 3
+Net 49 "" ""
+ U2 1
+ P1 3
+Net 50 "" ""
+ U1 22
+ P3 1
+Net 51 "" ""
+ U1 12
+ P1 5
+Net 52 "" ""
+ U1 10
+ P1 7
+Net 53 "" ""
+ P2 4
+ U1 7
+Net 54 "" ""
+ P2 7
+ U1 5
+Net 55 "" ""
+ U1 4
+ C6 1
+Net 56 "" ""
+ U1 28
+ C9 1
+ C2 1
+ K1 2
+Net 60 "" ""
+ C12 2
+ P6 1
+Net 61 "" ""
+ P8 14
+ P8 12
+ P8 16
+ P8 10
+ P8 8
+ P8 6
+ P8 4
+ P8 2
+ U1 8
+}
+#End

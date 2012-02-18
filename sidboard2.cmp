@@ -1,0 +1,157 @@
+Cmp-Mod V01 Created by CvPCB (2010-03-14)-final date = Mon 13 Feb 2012 04:07:32 AM CET
+
+BeginCmp
+TimeStamp = /4F38434F;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F38435A;
+Reference = C2;
+ValeurCmp = 100n;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3841E4;
+Reference = C3;
+ValeurCmp = 22p;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3841DD;
+Reference = C4;
+ValeurCmp = 22p;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F386FC8;
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3878CB;
+Reference = C6;
+ValeurCmp = 0.1u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3878D0;
+Reference = C7;
+ValeurCmp = 0.1u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3878C4;
+Reference = C8;
+ValeurCmp = 0.33u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3878CD;
+Reference = C9;
+ValeurCmp = 0.33u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3878D2;
+Reference = C10;
+ValeurCmp = 10u;
+IdModule  = C1V5H;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F383ADB;
+Reference = IC1;
+ValeurCmp = ATMEGA162-TQFP;
+IdModule  = TQFP44;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F386437;
+Reference = J1;
+ValeurCmp = AVR-ISP-10;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385DFE;
+Reference = P1;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E03;
+Reference = P2;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E0A;
+Reference = P3;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E17;
+Reference = P4;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385F7E;
+Reference = P5;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3877A7;
+Reference = P6;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F384262;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3877F9;
+Reference = U1;
+ValeurCmp = LM7805;
+IdModule  = LM78XX;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F387806;
+Reference = U2;
+ValeurCmp = LM7809;
+IdModule  = LM78XX;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3841C1;
+Reference = X1;
+ValeurCmp = 14.7456_MHz;
+IdModule  = Q_49U3HMS;
+EndCmp
+
+EndListe

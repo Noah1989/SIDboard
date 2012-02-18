@@ -1,0 +1,275 @@
+# EESchema Netlist Version 1.1 created  Tue 14 Feb 2012 02:34:58 PM CET
+(
+ ( /4F3A4FD2 SM0805 C1 C
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4F3A4F1D C1V5 C2 CP1
+  ( 1 N-000017 )
+  ( 2 N-000018 )
+ )
+ ( /4F3A4FDB C1V5 C3 CP1
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4F3A4F67 C1V5 C4 CP1
+  ( 1 N-000014 )
+  ( 2 GND )
+ )
+ ( /4F3A4F29 C1V5 C5 CP1
+  ( 1 N-000015 )
+  ( 2 N-000016 )
+ )
+ ( /4F3A4F71 C1V5 C6 CP1
+  ( 1 GND )
+  ( 2 N-000013 )
+ )
+ ( /4F3A50A4/4F122671 D4 D1 DIODE
+  ( 1 N-000072 )
+  ( 2 N-000073 )
+ )
+ ( /4F3A4E23 DB9FC J1 DB9
+  ( 1 ? )
+  ( 2 N-000008 )
+  ( 3 N-000019 )
+  ( 4 ? )
+  ( 5 GND )
+  ( 6 ? )
+  ( 7 N-000001 )
+  ( 8 N-000002 )
+  ( 9 ? )
+ )
+ ( /4F385DFE SIL-8 P1 CONN_8
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+ )
+ ( /4F385E03 SIL-8 P2 CONN_8
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 /MIDI/TXD1 )
+  ( 6 /MIDI/RXD1 )
+  ( 7 ? )
+  ( 8 ? )
+ )
+ ( /4F385E0A SIL-8 P3 CONN_8
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+ )
+ ( /4F385E17 SIL-8 P4 CONN_8
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 /CTS )
+  ( 6 /RTS )
+  ( 7 /TXD0 )
+  ( 8 /RXD0 )
+ )
+ ( /4F385F7E SIL-8 P5 CONN_8
+  ( 1 VCC )
+  ( 2 VDD )
+  ( 3 VEE )
+  ( 4 GND )
+  ( 5 GND )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+ )
+ ( /4F3A50A4/4F122274 PIN_ARRAY_5x1 P6 MIDI_IN
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 N-000070 )
+  ( 5 N-000072 )
+ )
+ ( /4F3A50A4/4F122CF4 PIN_ARRAY_5x1 P7 MIDI_OUT
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 ? )
+  ( 4 N-000064 )
+  ( 5 N-000054 )
+ )
+ ( /4F3A50A4/4F122B9A PIN_ARRAY_5x1 P8 MIDI_THRU
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 ? )
+  ( 4 N-000058 )
+  ( 5 N-000071 )
+ )
+ ( /4F3A50A4/4F122D6D TO92 Q1 BC558
+  ( 1 N-000063 )
+  ( 2 N-000062 )
+  ( 3 GND )
+ )
+ ( /4F3A50A4/4F122C3E TO92 Q2 BC558
+  ( 1 N-000061 )
+  ( 2 N-000055 )
+  ( 3 GND )
+ )
+ ( /4F3A50A4/4F122DCC R4 R1 10k
+  ( 1 /MIDI/TXD1 )
+  ( 2 N-000062 )
+ )
+ ( /4F3A50A4/4F1225CC R4 R2 1M
+  ( 1 N-000068 )
+  ( 2 GND )
+ )
+ ( /4F3A50A4/4F1225F2 R4 R3 220
+  ( 1 N-000073 )
+  ( 2 N-000070 )
+ )
+ ( /4F3A50A4/4F122D18 R4 R4 220
+  ( 1 N-000061 )
+  ( 2 N-000071 )
+ )
+ ( /4F3A50A4/4F122BDA R4 R5 220
+  ( 1 VCC )
+  ( 2 N-000058 )
+ )
+ ( /4F3A50A4/4F122DA1 R4 R6 220
+  ( 1 N-000054 )
+  ( 2 N-000063 )
+ )
+ ( /4F3A50A4/4F122D8C R4 R7 220
+  ( 1 VCC )
+  ( 2 N-000064 )
+ )
+ ( /4F3A50A4/4F122C87 R4 R8 4k7
+  ( 1 N-000055 )
+  ( 2 /MIDI/RXD1 )
+ )
+ ( /4F3A50A4/4F122A8D R4 R9 4k7
+  ( 1 VCC )
+  ( 2 /MIDI/RXD1 )
+ )
+ ( /4F3A4B70 DIP-16__300_ELL U1 MAX232
+  ( 1 N-000017 )
+  ( 2 N-000014 )
+  ( 3 N-000018 )
+  ( 4 N-000015 )
+  ( 5 N-000016 )
+  ( 6 N-000013 )
+  ( 7 N-000002 )
+  ( 8 N-000001 )
+  ( 9 /RTS )
+  ( 10 /CTS )
+  ( 11 /TXD0 )
+  ( 12 /RXD0 )
+  ( 13 N-000019 )
+  ( 14 N-000008 )
+  ( 15 GND )
+  ( 16 VCC )
+ )
+ ( /4F3A50A4/4F1222EA DIP-6__300_ELL U2 OPTO-TRANSISTOR
+  ( 1 N-000073 )
+  ( 2 N-000072 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /MIDI/RXD1 )
+  ( 6 N-000068 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component C5
+ CP*
+ SM*
+$endlist
+$component C6
+ CP*
+ SM*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component J1
+ DB9*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}

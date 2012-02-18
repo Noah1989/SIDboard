@@ -1,0 +1,9 @@
+PCBNEW-LibDoc----V1  Mon 13 Feb 2012 12:51:57 AM CET
+#
+$MODULE P2
+Li P2
+Cd Connecteur 26 pins
+Kw CONN DEV
+$EndMODULE
+#
+$EndLIBDOC

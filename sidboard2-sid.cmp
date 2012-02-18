@@ -1,0 +1,192 @@
+Cmp-Mod V01 Created by CvPCB (2010-03-14)-final date = Mon 13 Feb 2012 05:38:51 PM CET
+
+BeginCmp
+TimeStamp = /4F392007;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3934D7;
+Reference = C2;
+ValeurCmp = C;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3934C9;
+Reference = C3;
+ValeurCmp = C;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3924D4;
+Reference = C4;
+ValeurCmp = C;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3936AE;
+Reference = C5;
+ValeurCmp = C;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3924D7;
+Reference = C6;
+ValeurCmp = C;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393732;
+Reference = C7;
+ValeurCmp = C;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393745;
+Reference = C8;
+ValeurCmp = C;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393510;
+Reference = C9;
+ValeurCmp = CP1;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393515;
+Reference = C10;
+ValeurCmp = CP1;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393A9A;
+Reference = C11;
+ValeurCmp = CP1;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393A9F;
+Reference = C12;
+ValeurCmp = CP1;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3921F8;
+Reference = K1;
+ValeurCmp = INV3;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385DFE;
+Reference = P1;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E03;
+Reference = P2;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E0A;
+Reference = P3;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385E17;
+Reference = P4;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F385F7E;
+Reference = P5;
+ValeurCmp = CONN_8;
+IdModule  = SIL-8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F39366F;
+Reference = P6;
+ValeurCmp = AUDIO_IN;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F393597;
+Reference = P7;
+ValeurCmp = AUDIO_OUT;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F391F50;
+Reference = P8;
+ValeurCmp = CONN_8X2;
+IdModule  = pin_array_8x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3935EF;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F39366D;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3937D6;
+Reference = RV1;
+ValeurCmp = POT;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3937D1;
+Reference = RV2;
+ValeurCmp = POT;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F39048E;
+Reference = U1;
+ValeurCmp = 6581_SID;
+IdModule  = DIP-28__600_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F391E32;
+Reference = U2;
+ValeurCmp = 74LS138;
+IdModule  = SO16E;
+EndCmp
+
+EndListe
