@@ -101,10 +101,10 @@ sidws:
     ldi     temp, 1 << TOV1     ; TOV1 = TOIE1
     out     TIFR, temp          ; clear flag
     out     TIMSK, temp         ; enable interrupt
-sidw_wait:
+sidws_wait:
     in      temp, TIMSK
     sbrc    temp, TOIE1
-    rjmp    sidw_wait
+    rjmp    sidws_wait
     ret
 
 TIM1_OVF:
