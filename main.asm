@@ -35,8 +35,9 @@
 .cseg
 
 .include "interrupts.asm"
+.include "sidwrite.asm"
+.include "chime.asm"
 
-.org 0x38
 RESET:
     clr     temp                        ; set up zero register
     mov     zero, temp    
@@ -70,50 +71,12 @@ RESET:
        
     sbi     CTRL_PORT, RES              ; enable SID (reset to high)
     
-main:
-
-    ldi     addr, 0x18  ; volume
-    ldi     data, 0x0F
-    rcall   sidws
-    
-    ldi     addr, 0x01  ; frequency
-    ldi     data, 0x20
-
-    rcall   sidws    
-    ldi     addr, 0x05  ; attack / decay
-    ldi     data, 0xDA
-    rcall   sidws  
-    ldi     addr, 0x06  ; sustain / release
-    ldi     data, 0x08
-    rcall   sidws
-        
-    ldi     addr, 0x04  ; waveform / gate
-    ldi     data, 0x81
-    rcall   sidws 
+    rcall   chime                       ; power-on chime
 
 loop:
     rjmp    loop
 
-sidws:
-    ; synchronous sid write
-    ; enables TIM1_OVF to write to the SID
-    ; and waits for it to finish
-    ldi     temp, 1 << TOV1     ; TOV1 = TOIE1
-    out     TIFR, temp          ; clear flag
-    out     TIMSK, temp         ; enable interrupt
-sidws_wait:
-    in      temp, TIMSK
-    sbrc    temp, TOIE1
-    rjmp    sidws_wait
-    ret
 
-TIM1_OVF:
-    ; this interrupt does preserve SREG by just not touching it.
-    ; be careful!
-    out     ADDR_PORT, addr     ; write values	
-    out     DATA_PORT, data
-	out     TIMSK, zero         ; disable interrupt
-	reti
 	
 
 	
