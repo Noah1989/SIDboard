@@ -6,30 +6,31 @@
 .equ    ADDR_PORT = PORTA
 .equ    ADDR_DDR = DDRA
 
-.equ    DATA_PORT = PORTB
-.equ    DATA_DDR = DDRB
+.equ    DATA_PORT = PORTC
+.equ    DATA_DDR = DDRC
 
-.equ    CTRL_PORT = PORTC
-.equ    CTRL_DDR = PORTC
-.equ    CLK = PC4   ; SID clock, generated using OC3B (Timer 3 output)
-.equ    RES = PB1   ; reset
-.equ    RWC = PB0   ; read/write control
+.equ    CTRL_PORT = PORTE
+.equ    CTRL_DDR = DDRE
+.equ    RES = PE0   ; reset
+.equ    RWC = PE1   ; read/write control
 
-        ; Timer 3 setup (written to TCCRA:TCCRB): 
-        ; fast PWM, TOP = OCR3A
-        ; set OC3B pin on Compare Match, clear at TOP,
+        ; Timer 1 setup (written to TCCR1A:TCCR1B): 
+        ; fast PWM, TOP = OCR1A
+        ; set OC1B pin on Compare Match, clear at TOP,
         ; internal clock, no prescaling
-.equ    TIMER3_SETUP = 0x10 << COM3B0 | 0x10 << COM3B1 | \
-                       0x10 << WGM30 | 0x10 << WGM31 | \
-                       0x01 << WGM32 | 0x01 << WGM33 | \
-                       0x01 << CS30
+.equ    TIMER1_SETUPA = 1 << COM1B0 | 1 << COM1B1 | \
+                        1 << WGM10 | 1 << WGM11 
+.equ    TIMER1_SETUPB = 1 << WGM12 | 1 << WGM13 | \
+                        1 << CS10
                        
         ; generated clock: 14.7456 MHz / 15 = 0.983 MHz
         ; original C64 clock frequency (PAL): 0.985 MHz
-.equ    SID_CYCLE_LENGTH = 15 
+.equ    SID_CYCLE_LENGTH = 15
                         
-.def    zero = r0    ; always zero
-.def    temp = r16   ; temporary register, preserved by interrupts
+.def    zero = r0   ; always zero
+.def    temp = r16  ; temporary register, preserved by interrupts
+.def    addr = r17  ; SID address, used by write interrupt
+.def    data = r18  ; SID data, used by write interrupt
 
 .cseg
 
@@ -45,26 +46,74 @@ RESET:
     ldi     temp, low(RAMEND)
     out     SPL, temp
     
+    sei                                 ; enable interrupts
+    
     out     ADDR_PORT, zero             ; init ports to zero
     out     DATA_PORT, zero
-    out     CTRL_PORT, zero
-    
+    out     CTRL_PORT, zero    
+
     ldi     temp, 0xFF                  ; set ports as outputs
     out     ADDR_DDR, temp
     out     DATA_DDR, temp
     out     CTRL_DDR, temp
-    
-    ldi     temp, high(TIMER3_SETUP)    ; set up SID clock timer
-    sts     TCCR3A, temp
-    ldi     temp, low(TIMER3_SETUP)
-    sts     TCCR3B, temp                
+
+    ldi     temp, TIMER1_SETUPA         ; set up SID clock timer
+    out     TCCR1A, temp
+    ldi     temp, TIMER1_SETUPB
+    out     TCCR1B, temp                
     ldi     temp, SID_CYCLE_LENGTH - 1
-    sts     OCR3AH, zero
-    sts     OCR3AL, temp    
-    ldi     temp, SID_CYCLE_LENGTH / 2
-    sts     OCR3BH, zero
-    sts     OCR3BL, temp
-        
+    out     OCR1AH, zero
+    out     OCR1AL, temp    
+    ldi     temp, SID_CYCLE_LENGTH / 2 
+    out     OCR1BH, zero
+    out     OCR1BL, temp
+       
     sbi     CTRL_PORT, RES              ; enable SID (reset to high)
     
+main:
 
+    ldi     addr, 0x18  ; volume
+    ldi     data, 0x0F
+    rcall   sidws
+    
+    ldi     addr, 0x01  ; frequency
+    ldi     data, 0x20
+
+    rcall   sidws    
+    ldi     addr, 0x05  ; attack / decay
+    ldi     data, 0xDA
+    rcall   sidws  
+    ldi     addr, 0x06  ; sustain / release
+    ldi     data, 0x08
+    rcall   sidws
+        
+    ldi     addr, 0x04  ; waveform / gate
+    ldi     data, 0x81
+    rcall   sidws 
+
+loop:
+    rjmp    loop
+
+sidws:
+    ; synchronous sid write
+    ; enables TIM1_OVF to write to the SID
+    ; and waits for it to finish
+    ldi     temp, 1 << TOV1     ; TOV1 = TOIE1
+    out     TIFR, temp          ; clear flag
+    out     TIMSK, temp         ; enable interrupt
+sidw_wait:
+    in      temp, TIMSK
+    sbrc    temp, TOIE1
+    rjmp    sidw_wait
+    ret
+
+TIM1_OVF:
+    ; this interrupt does preserve SREG by just not touching it.
+    ; be careful!
+    out     ADDR_PORT, addr     ; write values	
+    out     DATA_PORT, data
+	out     TIMSK, zero         ; disable interrupt
+	reti
+	
+
+	
