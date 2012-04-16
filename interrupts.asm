@@ -47,7 +47,7 @@
     reti; rjmp TIM1_OVF    ; Timer1 Overflow Handler
     
 .org 0x20 
-    reti; rjmp TIM0_COMP   ; Timer0 Compare Handler
+    rjmp TIM0_COMP   ; Timer0 Compare Handler
     
 .org 0x22 
     reti; rjmp TIM0_OVF    ; Timer0 Overflow Handler
