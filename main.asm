@@ -42,9 +42,7 @@
 .include "interrupts.asm"
 .include "usart.asm"
 .include "sid.asm"
-.include "chime.asm"
 .include "commands.asm"
-.include "player.asm"
 
 RESET:
     clr     temp                ; set up zero register
@@ -57,6 +55,8 @@ RESET:
     ldi     temp, 0xFF          ; set ports as outputs
     out     ADDR_DDR, temp
     out     DATA_DDR, temp
+
+    ldi     temp, (1 << RES) | (1 << RWC)
     out     CTRL_DDR, temp
        
     ldi     temp, high(RAMEND)  ; initialize stack
@@ -69,8 +69,6 @@ RESET:
 
     rcall   usart_init          ; initialize USART
     rcall   sid_init            ; initialize SID
-    rcall   player_init         ; initialize interrupt-based playroutine
-    rcall   chime               ; power-on chime
     
     sei
     

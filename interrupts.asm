@@ -38,7 +38,7 @@
     reti; rjmp TIM1_CAPT   ; Timer1 Capture Handler
     
 .org 0x1A 
-    reti; rjmp TIM1_COMPA  ; Timer1 CompareA Handler
+    rjmp TIM1_COMPA  ; Timer1 CompareA Handler
     
 .org 0x1C 
     reti; rjmp TIM1_COMPB  ; Timer1 CompareB Handler
@@ -47,7 +47,7 @@
     reti; rjmp TIM1_OVF    ; Timer1 Overflow Handler
     
 .org 0x20 
-    rjmp TIM0_COMP   ; Timer0 Compare Handler
+    reti ;rjmp TIM0_COMP   ; Timer0 Compare Handler
     
 .org 0x22 
     reti; rjmp TIM0_OVF    ; Timer0 Overflow Handler
