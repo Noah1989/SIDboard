@@ -16,7 +16,7 @@
                       
 .equ    CPU_CLOCK = 14745600            
 
-.equ    BUFSIZE = 240   ; be careful to leave enough space for the stack!
+.equ    BUFSIZE = 250   ; be careful to leave enough space for the stack!
                         
 .def    zero = r0   ; always zero
 

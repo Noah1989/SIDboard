@@ -11,9 +11,6 @@
 ; original C64 clock frequency (PAL): 0.985 MHz
 .equ    SID_CYCLE_LENGTH = 15
 
-; number of SID cycles to wait between interrupts
-.equ    WAIT_SID_CYCLES = 16
-
 ; Timer 1 setup (written to TCCR1A:TCCR1B): 
 ; fast PWM, TOP = OCR1A
 ; do nothing with OC1B pin,
@@ -45,65 +42,46 @@ sid_init:
     out     TCCR1A, temp
     ldi     temp, TIMER1_SETUPB        ; set up timer
     out     TCCR1B, temp
-    ldi     temp, WAIT_SID_CYCLES - 1
-    sts     OCR1AH, zero
-    out     OCR1AL, temp
     
     in      temp, TIMSK                 ; enable interrupt
     sbr     temp, 1 << OCIE1A
     out     TIMSK, temp
     ret
 
-.def    delayH = r25        ; be careful. these registers are also
-.def    delayL = r24        ; used by the command processing loop
  
 TIM1_COMPA:
-    out     ADDR_PORT, addr     ; write values	
-    out     DATA_PORT, data    
-
-    in      stashA, SREG    ; save SREG
-    mov     stashB, r24     ; stash contents of r24/r25
-    mov     stashC, r25
-    
-    ; CAUTION! do not trash temp or call functions that do so.
+    ; RISING EDGE -------------------------------
+    ;interrupt response time: 4 4  
+    ; rjmp from vector table: 2 6
+    in      stashA, SREG    ; 1 7
+    ; FALLING EDGE ------------------------------
+    mov     stashB, r24     ; 1 1
+    mov     stashC, r25     ; 1 2       
         
-    ldi     YH, 0x01        ; load current delay from buffer
-    ld      delayH, Y
-    ldi     YH, 0x02
-    ld      delayL, Y
+    ldi     YH, 0x01        ; 1 3
+    ld      r25, Y          ; 2 5
+    ldi     YH, 0x02        ; 1 6
+    ld      r24, Y          ; 2 8    
+    ; RISING EDGE -------------------------------            
+    ldi     YH, 0x03        ; 1 1
+    ld      addr, Y         ; 2 3        
+    ldi     YH, 0x04        ; 1 4
+    ld      data, Y         ; 2 6    
+    sbiw    r24, 1          ; 1 7
+    ; FALLING EDGE ------------------------------        
+    ;second cycle from sbiw ; 1 1    
+    out     ADDR_PORT, addr ; 1 2
+    out     DATA_PORT, data ; 1 3
+    ; remaining cycles until RISING EDGE: 5
+    out     OCR1AH, r25
+    out     OCR1AL, r24  
     
-    sbiw    delayL, WAIT_SID_CYCLES
-    brlo    perform_write
-    st      Y, delayL
-    ldi     YH, 0x01
-    st      Y, delayH
-    rjmp    end
-    
-perform_write:    
-    
-    ; TODO: busy-wait the exact number of remaining SID cycles
-    
-    ldi     YH, 0x03        ; load current address from buffer
-    ld      addr, Y
-    ldi     YH, 0x04        ; load current data from buffer
-    ld      data, Y
-    
-sid_write:
-    ;ldi     tmpi, 1 << TOV3    
-    ;sts     ETIFR, tmpi          ; clear flag    
-sid_write_wait:
-    ;lds      tmpi, ETIFR          ; wait until flag is set
-    ;sbrs    tmpi, TOV3          
-    ;rjmp    sid_write_wait          
-    	
-    
-    inc     YL              ; advance to next buffer position
-    cpi     YL, BUFSIZE     
-    brlo    end
-    clr     YL              ; wrap around at buffer end 
-        
-end:    
-    mov     r25, stashC     ; restore contents of r24/r25
+    inc     YL             
+    cpi     YL, BUFSIZE 
+    brlo    TIM1_COMPA_end
+    clr     YL        
+TIM1_COMPA_end:       
+    mov     r25, stashC
     mov     r24, stashB
-    out     SREG, stashA    ; restore SREG
+    out     SREG, stashA
     reti

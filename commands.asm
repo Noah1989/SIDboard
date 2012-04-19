@@ -49,10 +49,9 @@ command_try_reset:
     sbi     CTRL_PORT, RES  ; enable SID again
     
     rcall   usart_receive   ; receive volume
-    mov     data, temp
-    ldi     addr, 0x18      ; volume register
-    rcall   sid_write
-    
+    mov     data, temp      ; TODO: make this reliable
+    ldi     addr, 0x18      ; volume register    
+        
     ldi     temp, 0x00      ; OK
     rcall   usart_transmit
     ret
@@ -66,7 +65,24 @@ command_mute:
     ret
     
 command_flush:
-    ; TODO: destroy queued data on all SIDs, and cease audio production
+    ; destroy queued data on all SIDs, and cease audio production
+    ldi     temp, 0xFF    
+    clr     XL    
+    
+command_flush_loop:  
+    ldi     XH, 0x01
+    st      X, zero         ; delay high byte to zero to avoid long wait queue
+    ldi     XH, 0x02
+    st      X, temp
+    ldi     XH, 0x03
+    st      X, temp   
+    ldi     XH, 0x04
+    st      X, temp
+    
+    inc     XL              ; advance to next buffer position
+    cpi     XL, BUFSIZE    
+    brlo    command_flush_loop
+    
     ldi     temp, 0x00      ; OK
     rcall   usart_transmit
     ret
