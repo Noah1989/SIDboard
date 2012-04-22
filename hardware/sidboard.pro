@@ -1,10 +1,6 @@
-update=20/11/2008-19:07:03
+update=Sun 22 Apr 2012 11:15:52 AM CEST
 version=1
 last_client=eeschema
-[general]
-version=1
-RootSch=
-BoardNm=
 [cvpcb]
 version=1
 NetITyp=0
@@ -81,6 +77,8 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -114,6 +112,8 @@ RptLab=1
 SimCmd=
 UseNetN=0
 LabSize=60
+PrintMonochrome=1
+ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -145,3 +145,5 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
+LibName31=lib/atmega162
+LibName32=lib/6581_sid
