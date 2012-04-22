@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 22 Apr 2012 01:56:48 PM CEST
+EESchema Schematic File Version 2  date Sun 22 Apr 2012 02:24:51 PM CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,7 +31,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:atmega162
 LIBS:6581_sid
-EELAYER 43  0
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
@@ -44,6 +44,16 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L ATMEGA162-P IC?
+U 1 1 4F93F890
+P 4450 3800
+F 0 "IC?" H 3650 5530 50  0000 L BNN
+F 1 "ATMEGA162-P" H 4675 1400 50  0000 L BNN
+F 2 "DIL40" H 4950 1325 50  0001 C CNN
+	1    4450 3800
+	1    0    0    -1  
+$EndComp
 Text Label 5500 5900 0    60   ~ 0
 RW
 Text Label 5500 6000 0    60   ~ 0
@@ -1150,15 +1160,6 @@ P 8000 3050
 F 0 "U1" H 7650 4100 60  0000 C CNN
 F 1 "6581 SID" H 8250 2000 60  0000 C CNN
 	1    8000 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L ATMEGA162-P IC1
-U 1 1 4F93CC65
-P 4450 3800
-F 0 "IC1" H 3650 5530 50  0000 L BNN
-F 1 "ATMEGA162-P" H 4675 1400 50  0000 L BNN
-	1    4450 3800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
